@@ -1,144 +1,151 @@
 /**** Base Styles ****/
+html {
+    font-size: 16px;
+}
 
 body {
     font-family: 'Montserrat', Helvetica, Arial, sans-serif;
-    max-width: 1250px;
-    margin: auto;
+    display: flex;
+    flex-basis: 350px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
 }
 
 h2 {
     color: #77a466;
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: bold;
-    line-height: 23px;
+    line-height: 1.4375em;
 
 }
 
 p {
     color: #000000;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 h3 {
     text-transform: uppercase;
     color: #000000;
-    font-size: 12px;
+    font-size: .75em;
 }
 
 /**** GRID ****/
-.full-width {
-    width: 1200px;
-    padding: 0 20px;
-    overflow: auto;
-    background: white;
-    background-size: cover;
-    background-position: center;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 90%;
+    max-width: 1330px;
 }
 
-.third-width {
-    width: 398px;
-    float: left;
+header, nav, .footer, #banner, .col-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    width: 100%;
 }
 
-.half-width {
-    float: left;
-    width: 600px;
+.bottom-section {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
 }
 
-/**** HEADER ****/
+.col-2, .col-3 {
+    width: 100%;
+}
+
+
+/**** HEADER & TOP ****/
 #rogue-logo h1 {
     text-transform: uppercase;
-    font-size: 30px;
-    line-height: 23px;
-    margin: 40px 0;
+    font-size: 1.875em;
+    line-height: 1.4375em;
+    text-align: center;
+    border-bottom: solid #77a466 3px;
+    width: 100%;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+
 }
 
 #rogue-logo span {
     color: #77a466;
 }
 
-nav {
-    padding: 25px 10px 25px 0;
-    float: right;
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
 }
 
 nav ul li {
-    display: inline-block;
+    display: flex;
 }
 
 nav ul li a {
     color: #77a466;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 14px;
+    font-size: .875em;
+    line-height: 1.875em;
     font-weight: bold;
-    padding-left: 20px; 
+    padding-right: 2.1875em; 
 }
 
 #banner img {
     border-top: solid 3px;
     border-bottom: solid 3px;
     border-color: #77a466;
+    width: 100%;
 }
 
 
-/**** WELCOME ****/
-#welcome h2 {
-    padding: 10px 0 0px 0;
+/**** CONTENT ****/
+main h2 {
+    padding: 0.625em 0 0px 0;  /* 10px top */
     
 }
 
-#welcome p {
-    padding: 5px 0 15px 27px;
-    line-height: 25px;
+main p {
+    /* padding 5px 0 15px 0 */
+    line-height: 1.5625em;
 }
 
 #specials, #reviews, #contact {
-    height: 195px;
-    padding-top: 12px;
+    padding-top: .75em;
+}
+
+#specials, #contact {
     border-top: solid lightgray 1px;
     border-bottom: solid lightgray 1px;
 }
 
 #specials p, #reviews p, #contact p {
-    padding-top: 5px;
+    padding-top: .3125em;
 }
 
-/**** SPECIALS ****/
-#specials h3 {
-    padding-bottom: 3px;
-}
 
 #specials p{
     color: #77a466;
 }
 
-
-
-/**** REVIEWS ****/
-#reviews {
-    border-left: solid lightgray 1px;
-    border-right: solid lightgray 1px;
-    padding-left: 27px;
-    padding-right: 27px;
-
-}
-
-
-
-/**** CONTACT ****/
 #contact {
-    padding-left: 27px;
+    padding-bottom: .75em;
 }
-
 
 
 /**** FOOTER ****/
 footer h2 {
     text-align: center;
     color: black;
-    padding: 15px;
+    padding: .9375em;
 }
 
 footer h2 span {
@@ -146,6 +153,98 @@ footer h2 span {
     font-family: 'Galada', cursive;
     text-transform: lowercase;
     font-weight: normal;
-    word-spacing: 1px;
-    line-height: 10px;
+    word-spacing: .0625em;
+    line-height: .625em;
 }
+
+
+/**** MEDIA QUERIES ****/
+
+ @media (min-width: 768px) {
+    body {
+        font-size: 1.1em;
+    }
+    
+    .col-3 {
+        width: 50%;
+    }
+    
+    #specials {
+        border: none;
+    }
+
+    main p {
+        border-bottom: solid lightgray 1px;
+        padding-bottom: 2em;
+    }
+
+    #specials, #reviews {
+        padding: 0 0 .5em 0;
+        margin-top: 0;
+    }
+}
+
+
+@media (min-width: 1201px) {
+    body {
+        font-size: 1em;
+        background: white;
+    }
+
+    .col-3 {
+        width: 30%;
+    }
+    
+    .col-2 {
+        width: 40%
+    }
+
+    #rogue-logo h1 {
+        border: none;
+        text-align: left;
+    }
+
+    nav {
+        width: 60%
+    }
+
+    nav ul {
+        justify-content: end;
+        flex-flow: nowrap;
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        padding-left: 2.1875em;
+        padding-right: 0; 
+    }
+    
+    main p {
+        padding: 0 0 0 1.6875em;
+        margin-bottom: 1.9em;
+        border: none;
+    }
+
+    .bottom-section {
+        justify-content: space-between;
+    }
+
+    #specials, #reviews, #contact {
+        padding-top: .75em;
+        border-top: solid lightgray 1px;
+        border-bottom: solid lightgray 1px;
+        flex-basis: 300px;
+        flex-grow: 1;
+    }
+
+    #reviews {
+        border-left: solid lightgray 1px;
+        border-right: solid lightgray 1px;
+        padding-left: 1.6875em;
+        padding-right: 1.6875em;
+    }
+
+    #contact {
+        padding-left: 1.6875em;
+    }
+} 
