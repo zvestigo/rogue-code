@@ -132,7 +132,7 @@ main p {
 }
 
 
-#specials p{
+#specials p {
     color: #77a466;
 }
 
@@ -166,21 +166,30 @@ footer h2 span {
     }
     
     .col-3 {
-        width: 50%;
+        width: 30%;
     }
     
-    #specials {
-        border: none;
+    .bottom-section {
+        justify-content: space-between;
     }
 
-    main p {
+    #specials, #reviews, #contact {
+        padding-top: .75em;
+        border-top: solid lightgray 1px;
         border-bottom: solid lightgray 1px;
-        padding-bottom: 2em;
+        flex-basis: 150px;
+        flex-grow: 1;
     }
 
-    #specials, #reviews {
-        padding: 0 0 .5em 0;
-        margin-top: 0;
+    #reviews {
+        border-left: solid lightgray 1px;
+        border-right: solid lightgray 1px;
+        padding-left: 1.6875em;
+        padding-right: 1.6875em;
+    }
+
+    #contact {
+        padding-left: 1.6875em;
     }
 }
 
@@ -196,7 +205,7 @@ footer h2 span {
     }
     
     .col-2 {
-        width: 40%
+        width: 50%
     }
 
     #rogue-logo h1 {
@@ -205,13 +214,14 @@ footer h2 span {
     }
 
     nav {
-        width: 60%
+        width: 50%
     }
 
     nav ul {
-        justify-content: end;
+        justify-content: space-between;
         flex-flow: nowrap;
         margin-right: 0;
+        width: 100%;
     }
 
     nav ul li a {
